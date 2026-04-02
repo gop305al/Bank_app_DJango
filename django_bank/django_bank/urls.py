@@ -22,7 +22,7 @@ from app.views import create_acc,deposite,withdraw,home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home, name='home_page'),
-    path('create_acc',create_acc,name='create_acc'),
-    path('deposit',deposite,name='deposit'),
-    path('withdraw',withdraw,name='withdraw')
+    path('create_acc/',create_acc,name='create_acc'),
+    path('deposit/',deposite,name='deposit'),
+    path('withdraw/',withdraw,name='withdraw')
 ]
