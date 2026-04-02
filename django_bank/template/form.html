@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<style>
+    body {
+        font-family: Arial;
+        background: #f5f5f5;
+    }
+    .container {
+        width: 400px;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    h2 {
+        text-align: center;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Open Bank Account</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="fullname" placeholder="Full Name" required>
+
+            <label>Date of Birth:</label>
+            <input type="date" name="dob" required>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <input type="radio" name="gender" value="other"> Other
+
+            <input type="tel" name="mobile" placeholder="Mobile Number" required>
+
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <textarea name="address" placeholder="Address" required></textarea>
+
+            <label>Account Type:</label>
+            <select name="accountType">
+                <option value="savings">Savings</option>
+                <option value="current">Current</option>
+                <option value="fixed">Fixed Deposit</option>
+            </select>
+
+            <input type="number" name="deposit" placeholder="Initial Deposit" required>
+
+            <button type="submit">Create Account</button>
+        </form>
+
+
+        <a href="{% url 'home_page' %}">Home</a>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Application</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 22px;
+        }
+
+        .btn {
+            display: block;
+            text-decoration: none;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s;
+            color: white;
+        }
+
+        .create {
+            background: #28a745;
+        }
+
+        .deposit {
+            background: #007bff;
+        }
+
+        .withdraw {
+            background: #dc3545;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            opacity: 0.95;
+        }
+
+        .icon {
+            margin-right: 8px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🏦 Bank Application</h1>
+
+        <a class="btn create" href="{% url 'create_acc' %}">
+            ➕ Create Account
+        </a>
+
+        <a class="btn deposit" href="{% url 'deposit' %}">
+            💰 Deposit Money
+        </a>
+
+        <a class="btn withdraw" href="{% url 'withdraw' %}">
+            💸 Withdraw Money
+        </a>
+    </div>
+
+</body>
+</html>
